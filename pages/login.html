@@ -58,9 +58,9 @@
                     sessionStorage.setItem('role', data.role);
 
                     if (data.role === "customer") {
-                        window.location.href = "/customer.html";
+                        window.location.href = "pages/customer.html";
                     } else if (data.role === "employee") {
-                        window.location.href = "/employee.html";
+                        window.location.href = "pages/employee.html";
                     }
                 } else {
                     messageElement.textContent = data.message || 'Login failed. Please try again.';
