@@ -1,29 +1,39 @@
 document.getElementById("login-form").addEventListener("submit", async (event) => {
-    event.preventDefault();
+    // Event listener for login form submission
+    event.preventDefault(); // Prevents default form submission behavior
 
+    // Extract email and password values from input fields
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value.trim();
     const messageElement = document.getElementById("message");
 
     messageElement.innerText = ""; // Clear previous messages
 
+    // Validate input
     if (!email || !password) {
         messageElement.innerText = "Please enter both email and password.";
         return;
     }
 
-    try {
+    try { 
+        // Send POST request to backend /auth/login
         const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
+            body: JSON.stringify({ email, password }), // Sends email and password to backend
         });
 
         const data = await response.json();
-
+        
+        // If login is successful, store the token and redirect
         if (response.ok) {
-            localStorage.setItem("token", data.token); // Store JWT token
-            window.location.href = "/dashboard.html"; // Redirect after login
+            sessionStorage.setItem("token", data.token); // Store JWT token
+            sessionStorage.setItem("role", data.role); // Store role
+            if (data.role === "customer") {
+              window.location.href = "/customer-dashboard.html"; // Redirect to customer dashboard
+            } else if (data.role === "employee") {
+              window.location.href = "/employee-dashboard.html"; // Redirect to employee dashboard
+            }
         } else {
             messageElement.innerText = data.message || "Login failed. Please try again.";
         }
@@ -32,4 +42,3 @@ document.getElementById("login-form").addEventListener("submit", async (event) =
         console.error("Login error:", error);
     }
 });
-                                
