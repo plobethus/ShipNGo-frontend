@@ -255,3 +255,27 @@ nav ul li:hover .dropdown {
     height:100px;
     
 }
+
+/* Worker styles */
+
+.out{
+    padding:4px;
+
+}
+
+.name{
+    display:flex;
+    flex-direction:row;
+    gap:16px;
+}
+
+.worker_input{
+    display:flex;
+    width:800px;
+    height:100px;
+    background-color: #004080;
+    color:white;
+    justify-content:center;
+    margin: 16px auto;
+    border-radius:15px;
+}
