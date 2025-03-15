@@ -30,9 +30,9 @@ document.getElementById("login-form").addEventListener("submit", async (event) =
             sessionStorage.setItem("token", data.token); // Store JWT token
             sessionStorage.setItem("role", data.role); // Store role
             if (data.role === "customer") {
-              window.location.href = "/customer-dashboard.html"; // Redirect to customer dashboard
+              window.location.href = "/pages/customer.html"; // Redirect to correct customer page
             } else if (data.role === "employee") {
-              window.location.href = "/employee-dashboard.html"; // Redirect to employee dashboard
+              window.location.href = "/pages/employee.html"; // Redirect to correct employee page
             }
         } else {
             messageElement.innerText = data.message || "Login failed. Please try again.";
