@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Page</title>
+    <link rel="stylesheet" href="../styles/support.css">
+    <script src="../scripts/support.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Support Center</h1>
+        
+        
+        <div class="card">
+        
+            <form id="support-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <input type="number" id="phone" placeholder="Your Phone No." required>
+                <textarea id="issue" placeholder="Describe your issue..." required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <h3>OR</h3>
+
+        <button class="call-btn" onclick="alert('Reach Out to us at +phonenumber')">📞Call Support</button>
+        
+        <div class="card">
+            <h2>Past Support Tickets</h2>
+            <ul id="ticket-list">
+                <li class="empty">No support tickets yet.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+     
+    </script>
+</body>
+</html>
