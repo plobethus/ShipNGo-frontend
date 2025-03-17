@@ -15,7 +15,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     if (role === "employee") {
-        await loadPackages();
+        try {
+            await loadPackages();
+        } catch (error) {
+            console.error("Error loading packages on page load:", error);
+        }
     }
 });
 
