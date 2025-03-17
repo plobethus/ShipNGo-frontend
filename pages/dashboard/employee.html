@@ -23,18 +23,23 @@
     </div>
     <div class="package-container">
         <h2>All Packages</h2>
-        <table id="package-table">
-            <thead>
+    <table>
+        <thead>
+            <tr>
+                <th>Package ID</th>
+                <th>Status</th>
+                <th>Location</th>
+            </tr>
+        </thead>
+        <tbody id="package-table">
+            <% packages.forEach(pkg => { %>
                 <tr>
-                    <th>Package ID</th>
-                    <th>Status</th>
-                    <th>Location</th>
-                    <th>Actions</th>
+                    <td><%= pkg.package_id %></td>
+                    <td><%= pkg.status %></td>
+                    <td><%= pkg.location %></td>
                 </tr>
-            </thead>
-            <tbody>
-                <!-- Packages will be inserted dynamically -->
-            </tbody>
+            <% }) %>
+        </tbody>
         </table>
     </div>
     

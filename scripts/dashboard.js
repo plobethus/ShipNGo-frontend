@@ -28,31 +28,11 @@ function logout() {
 
 async function loadPackages() {
     try {
-        const response = await fetch("https://shipngo-backend/api/packages", {
-            headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` },
-        });
-
-        if (!response.ok) {
-            throw new Error("Failed to fetch packages.");
-        }
-
-        const packages = await response.json();
-
-        const packageTable = document.getElementById("package-table").querySelector("tbody");
-        packageTable.innerHTML = ""; // Clear existing data
-
-        packages.forEach(pkg => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${pkg.package_id}</td>
-                <td>${pkg.status}</td>
-                <td>${pkg.location}</td>
-                <td><button onclick="editPackage(${pkg.package_id})">Edit</button></td>
-            `;
-            packageTable.appendChild(row);
-        });
+        const response = await fetch("/packages/dashboard/employee");
+        const html = await response.text();
+        document.getElementById("package-table").innerHTML = html;
     } catch (error) {
-        console.error("Error fetching packages:", error);
+        console.error("Error loading packages:", error);
     }
 }
 
