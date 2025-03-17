@@ -31,9 +31,9 @@ document.getElementById("login-form").addEventListener("submit", async (event) =
             sessionStorage.setItem("role", data.role); // Store role
             sessionStorage.setItem("name", data.name); // Store user name
             if (data.role === "customer") {
-              window.location.href = "customer.html"; // Redirects to customer page in the correct path
+              window.location.href = "dashboard/customer.html"; // Redirects to customer page in the correct path
             } else if (data.role === "employee") {
-              window.location.href = "employee.html"; // Redirects to employee page in the correct path
+              window.location.href = "dashboard/employee.html"; // Redirects to employee page in the correct path
             }
         } else {
             messageElement.innerText = data.message || "Login failed. Please try again.";
