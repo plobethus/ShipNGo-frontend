@@ -21,5 +21,38 @@
         Update a package location! 
 
     </div>
+    <div class="package-container">
+        <h2>All Packages</h2>
+        <table id="package-table">
+            <thead>
+                <tr>
+                    <th>Package ID</th>
+                    <th>Status</th>
+                    <th>Location</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Packages will be inserted dynamically -->
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="package-update">
+        <h3>Update Package</h3>
+        <form id="update-package-form">
+            <label for="package-id">Package ID:</label>
+            <input type="text" id="package-id" required>
+    
+            <label for="new-status">New Status:</label>
+            <input type="text" id="new-status">
+    
+            <label for="new-location">New Location:</label>
+            <input type="text" id="new-location">
+    
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    <script src="../../scripts/dashboard.js"></script>
 </body>
 </html>

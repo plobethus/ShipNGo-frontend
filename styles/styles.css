@@ -279,3 +279,35 @@ nav ul li:hover .dropdown {
     margin: 16px auto;
     border-radius:15px;
 }
+.package-container {
+  margin: 20px auto;
+  width: 90%;
+  text-align: center;
+}
+
+#package-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#package-table th, #package-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.package-update {
+  margin: 20px auto;
+  width: 50%;
+  text-align: center;
+}
+
+.package-update form {
+  display: flex;
+  flex-direction: column;
+}
+
+.package-update input, .package-update button {
+  margin: 5px 0;
+  padding: 8px;
+}
