@@ -29,8 +29,20 @@ function logout() {
 async function loadPackages() {
     try {
         const response = await fetch("/packages/dashboard/employee");
-        const html = await response.text();
-        document.getElementById("package-table").innerHTML = html;
+        const packages = await response.json();
+        const packageTable = document.getElementById("package-table");
+        packageTable.innerHTML = "";
+        packages.forEach(pkg => {
+            const row = `
+                <tr>
+                    <td>${pkg.package_id}</td>
+                    <td>${pkg.status}</td>
+                    <td>${pkg.location}</td>
+                    <td><button onclick="editPackage(${pkg.package_id})">Edit</button></td>
+                </tr>
+            `;
+            packageTable.innerHTML += row;
+        });
     } catch (error) {
         console.error("Error loading packages:", error);
     }
