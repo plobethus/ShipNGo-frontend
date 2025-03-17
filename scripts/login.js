@@ -29,6 +29,7 @@ document.getElementById("login-form").addEventListener("submit", async (event) =
         if (response.ok) {
             sessionStorage.setItem("token", data.token); // Store JWT token
             sessionStorage.setItem("role", data.role); // Store role
+            sessionStorage.setItem("name", data.name); // Store user name
             if (data.role === "customer") {
               window.location.href = "customer.html"; // Redirects to customer page in the correct path
             } else if (data.role === "employee") {
