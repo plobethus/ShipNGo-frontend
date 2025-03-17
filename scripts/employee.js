@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) {
         console.error("Error loading packages on page load:", error);
     }
-});
+}) ; 
 
 async function loadPackages() {
     console.log("Fetching packages...");
