@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 async function loadPackages() {
     console.log("Fetching packages...");
     try {
-        const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/packages/dashboard/employee", {
+    const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/dashboard/employee", {
             headers: {
                 "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
                 "Content-Type": "application/json"
