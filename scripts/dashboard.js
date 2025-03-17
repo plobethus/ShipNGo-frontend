@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Set welcome message based on user role
     const welcomeDiv = document.getElementById("welcome-message");
     if (welcomeDiv) {
-        const name = sessionStorage.getItem("name");
+        const name = sessionStorage.getItem("name") || "User";
         welcomeDiv.innerText = `Welcome, ${name} (${role === "customer" ? "Customer" : "Employee"})!`;
     }
 });
