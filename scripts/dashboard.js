@@ -29,7 +29,12 @@ function logout() {
 async function loadPackages() {
     console.log("Fetching packages...");
     try {
-        const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/packages/dashboard/employee");
+        const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/packages/dashboard/employee", {
+            headers: {
+                "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
+                "Content-Type": "application/json"
+            }
+        });
         const packages = await response.json();
         console.log("Received packages:", packages);
         const packageTable = document.getElementById("package-table");
