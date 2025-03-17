@@ -29,47 +29,9 @@
         <p id="message"></p>
         <p id="login-result"></p>
     </section>
-
-    <script src="../scripts/login.js"></script>
-
-    <script>
-        // Ensure the UI handles login errors properly
-        const form = document.getElementById('login-form');
-        const messageElement = document.getElementById('message');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            try {
-                const response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email, password }),
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    sessionStorage.setItem('token', data.token);
-                    sessionStorage.setItem('role', data.role);
-
-                    if (data.role === "customer") {
-                        window.location.href = "pages/customer.html";
-                    } else if (data.role === "employee") {
-                        window.location.href = "pages/employee.html";
-                    }
-                } else {
-                    messageElement.textContent = data.message || 'Login failed. Please try again.';
-                }
-            } catch (error) {
-                messageElement.textContent = 'An error occurred. Please try again later.';
-            }
-        });
-    </script>
+    
+    <!-- login route javascript-->
+    <script src="../scripts/login.js"></script> 
 
 </body>
 </html>
