@@ -17,10 +17,22 @@
         
     </header>
 
-    <div class = "worker_input">
-        Update a package location! 
-
+    <div class="package-update">
+        <h2>Update Package</h2>
+        <form id="update-package-form">
+            <label for="package-id">Package ID:</label>
+            <input type="text" id="package-id" required>
+    
+            <label for="new-status">New Status:</label>
+            <input type="text" id="new-status">
+    
+            <label for="new-location">New Location:</label>
+            <input type="text" id="new-location">
+    
+            <button type="submit">Update</button>
+        </form>
     </div>
+
     <div class="package-container">
         <h2>All Packages</h2>
     <table>
@@ -37,21 +49,7 @@
         </table>
     </div>
     
-    <div class="package-update">
-        <h3>Update Package</h3>
-        <form id="update-package-form">
-            <label for="package-id">Package ID:</label>
-            <input type="text" id="package-id" required>
     
-            <label for="new-status">New Status:</label>
-            <input type="text" id="new-status">
-    
-            <label for="new-location">New Location:</label>
-            <input type="text" id="new-location">
-    
-            <button type="submit">Update</button>
-        </form>
-    </div>
     <script src="../../scripts/employee.js" defer></script>
 </body>
 </html>
