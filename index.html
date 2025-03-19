@@ -63,7 +63,7 @@
     </footer>
 
     <script>
-        document.getElementById("tracking-form").addEventListener("submit", function(event) {
+        document.getElementById("tracking-form").addEventListener("submit", async function(event) {
             event.preventDefault(); // Prevent page refresh
     
             const trackingID = document.getElementById("tracking_id").value.trim();
@@ -75,18 +75,20 @@
                 return;
             }
     
-            // Simulated tracking data
-            const trackingData = {
-                "123456": "Your package is in transit.",
-                "789012": "Your package has been delivered.",
-                "345678": "Your package is out for delivery."
-            };
+            try {
+                const response = await fetch(`/tracking/${trackingID}`);
+                const data = await response.json();
     
-            if (trackingData[trackingID]) {
-                // Redirect to trackingpage.html with the tracking ID as a query parameter
-                window.location.href = `trackingpage.html?trackingNumber=${trackingID}`;
-            } else {
-                resultElement.textContent = "Tracking ID not found.";
+                if (response.ok) {
+                    // Redirect to tracking page with tracking data
+                    window.location.href = `trackingpage.html?trackingNumber=${trackingID}`;
+                } else {
+                    resultElement.textContent = data.message || "Tracking ID not found.";
+                    resultElement.style.color = "red";
+                }
+            } catch (error) {
+                console.error("Error fetching tracking info:", error);
+                resultElement.textContent = "An error occurred while fetching tracking details.";
                 resultElement.style.color = "red";
             }
         });
