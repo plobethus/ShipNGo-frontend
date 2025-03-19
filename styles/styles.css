@@ -147,10 +147,9 @@ nav ul li a {
     background-color: #004080;
     color:white;
     width:400px;
-    height:230px;
     margin: 120px auto;
+    margin-bottom: 30px;
     padding: 24px 48px;
-    padding-bottom:12px;
     border-radius:15px;
     font-size:20px;
 }
@@ -174,10 +173,26 @@ nav ul li a {
     display:flex;
     justify-content:center;
     align-items:center;
-    margin: 16px auto;
+    margin: 0px auto;
+    margin-top:16px;
+    margin-bottom:4px;
     width:305px;
     height:40px;
 }
+
+.register-today{
+    display:flex;
+    color:white;
+    font-size:16px;
+    justify-content:center;
+}
+
+/* Registration styles */
+#classification{
+    width:165px;
+}
+
+/* Tracking styles */
 
 .tracking {
   display: flex;
@@ -359,3 +374,4 @@ nav ul li:hover .dropdown {
   margin: 5px 0;
   padding: 8px;
 }
+
