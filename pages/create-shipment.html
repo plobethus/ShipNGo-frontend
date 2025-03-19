@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Shipment | ShipNGo</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>ShipNGo</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./store.html">Store</a></li>
+                <li><a href="./faq.html">Support</a></li>
+            </ul>
+            <div class="login">
+                <a href="login.html" class="btn">Log In</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shipment-form">
+            <h2>Create a Shipment</h2>
+            <form id="shipment-form">
+                <label for="sender-name">Sender Name:</label>
+                <input type="text" id="sender-name" name="sender-name" required>
+
+                <label for="sender-address">Sender Address:</label>
+                <input type="text" id="sender-address" name="sender-address" required>
+
+                <label for="receiver-name">Receiver Name:</label>
+                <input type="text" id="receiver-name" name="receiver-name" required>
+
+                <label for="receiver-address">Receiver Address:</label>
+                <input type="text" id="receiver-address" name="receiver-address" required>
+
+                <label for="package-weight">Package Weight (lbs):</label>
+                <input type="number" id="package-weight" name="package-weight" required>
+
+                <label for="shipping-option">Shipping Option:</label>
+                <select id="shipping-option" name="shipping-option" required>
+                    <option value="standard">Standard (5-7 Days)</option>
+                    <option value="express">Express (2-3 Days)</option>
+                    <option value="overnight">Overnight</option>
+                </select>
+
+                <button type="submit" class="btn">Submit Shipment</button>
+            </form>
+            <p id="shipment-result"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("shipment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const sender = document.getElementById("sender-name").value;
+            const receiver = document.getElementById("receiver-name").value;
+            const weight = document.getElementById("package-weight").value;
+            const shippingOption = document.getElementById("shipping-option").value;
+
+            if (sender && receiver && weight && shippingOption) {
+                document.getElementById("shipment-result").textContent = 
+                    `Shipment Created! Sender: ${sender}, Receiver: ${receiver}, Weight: ${weight} lbs, Option: ${shippingOption}`;
+                document.getElementById("shipment-result").style.color = "green";
+            } else {
+                document.getElementById("shipment-result").textContent = "Please fill in all fields.";
+                document.getElementById("shipment-result").style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>
