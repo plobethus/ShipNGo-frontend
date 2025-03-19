@@ -12,16 +12,17 @@
     <header>
         <nav>
             <a href = "../index.html">
-                <h1 class = navbar>ShipNGo - Login</h1>
+                <h1 class = navbar>ShipNGo - Register</h1>
             </a>
             <ul>
                 <li>
                     <a href="#shipping">Shipping</a>
                     <ul class="dropdown">
-                        <li><a href="./create-shipment.html">Create a Shipment</a></li>
-                        <li><a href="#">Schedule & Manage Pickups</a></li>
-                        <li><a href="./store.html">Packing & Shipping Supplies</a></li>
-                        <li><a href="./returns.html">Manage a Return</a></li>
+                        <li><a href="#create-shipment">Create a Shipment</a></li>
+                        <li><a href="#rates-delivery">Schedule Rates & Delivery Times</a></li>
+                        <li><a href="#manage-pickups">Schedule & Manage Pickups</a></li>
+                        <li><a href="#packing-supplies">Packing & Shipping Supplies</a></li>
+                        <li><a href="#manage-return">Manage a Return</a></li>
                     </ul>
                 </li>
                 <li>
@@ -47,22 +48,32 @@
 
     <!-- Main container for the login form -->
     <section class="login-container">
-        <div class = "login-title">Login</div>
+        <div class = "login-title">Customer Registration</div>
         <!-- Form for user login -->
         <form id="login-form">
             <div class = "login-field">
-                <label for="email">Email:</label>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class = "login-field">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class = "login-field">
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class = "login-field">
+                <label for="username">Email:</label>
                 <input type="text" id="email" name="email" required>
             </div>
             <div class = "login-field">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password">
             </div class = "login-field">
+            
             <div>
-                <button type="submit" class = "login-button">Login</button>
-                <div class = "register-today">
-                    <a href = "./customer_registration.html" style ="color:white">Don't have an account? Register now!</a>
-                </div>
+                <button type="submit" class = "login-button">Register</button>
             </div>
 
         </form>
@@ -70,7 +81,5 @@
         <p id="message"></p>
         <p id="login-result"></p>
     </section>
-    <!-- login route javascript-->
-    <script src="../scripts/login.js"></script>
 </body>
 </html>
