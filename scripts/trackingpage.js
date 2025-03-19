@@ -1,8 +1,7 @@
-
-
 document.addEventListener("DOMContentLoaded", async function () {
     const urlParams = new URLSearchParams(window.location.search);
     const trackingNumber = urlParams.get('trackingNumber');
+    console.log("Extracted tracking number:", trackingNumber); // Debugging log
 
     if (!trackingNumber) {
         document.getElementById("tracking-info").innerHTML = "<p style='color:red;'>No tracking number provided in URL.</p>";
