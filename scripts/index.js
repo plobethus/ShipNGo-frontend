@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const data = await response.json();
 
                 if (response.ok) {
-                    window.location.href = `trackingpage.html?trackingNumber=${trackingID}`;
+                    window.location.href = `./pages/trackingpage.html?trackingNumber=${trackingID}`;
                 } else {
                     resultElement.textContent = data.message || "Tracking ID not found.";
                     resultElement.style.color = "red";
