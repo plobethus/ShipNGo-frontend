@@ -111,6 +111,12 @@
     background-color: #004080;
     color: white;
 }
+
+.navbar{
+    margin-right:50px;
+    color: white;
+}
+
 nav ul {
     list-style: none; 
     display: flex;
@@ -131,6 +137,46 @@ nav ul li a {
     padding: 10px 15px;
     background-color: #ffcc00;
     border-radius: 5px;
+}
+
+.login-container{
+    display:flex;
+    justify-content:bottom;
+    justify-content:space-between;
+    flex-direction:column;
+    background-color: #004080;
+    color:white;
+    width:400px;
+    height:230px;
+    margin: 120px auto;
+    padding: 24px 48px;
+    padding-bottom:12px;
+    border-radius:15px;
+    font-size:20px;
+}
+
+.login-field{
+    display:flex;
+    justify-content:left;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.login-title{
+    display:flex;
+    justify-content:center;
+    align-items:top;
+    font-size:30px;
+}
+
+.login-button{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin: 16px auto;
+    width:305px;
+    height:40px;
 }
 
 .tracking {
@@ -280,9 +326,11 @@ nav ul li:hover .dropdown {
     border-radius:15px;
 }
 .package-container {
-  margin: 20px auto;
-  width: 90%;
-  text-align: center;
+    display:flex;
+    flex-direction:column;
+    width:800px;
+    margin: 20px auto;
+    text-align: center;
 }
 
 #package-table {
