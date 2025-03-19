@@ -10,8 +10,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     try {
-        console.log("Fetching tracking info for:", trackingNumber);
-        const response = await fetch(`https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/tracking/${trackingNumber}`);
+        const apiBaseUrl = "https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net";
+        const fetchUrl = `${apiBaseUrl}/tracking/${encodeURIComponent(trackingNumber)}`;
+        console.log("Fetching tracking info from:", fetchUrl);
+  
+        const response = await fetch(fetchUrl);
         const data = await response.json();
 
         if (!response.ok || !data.history || data.history.length === 0) {
