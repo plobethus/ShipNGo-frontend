@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     const resultElement = document.getElementById("tracking-result");
     const urlParams = new URLSearchParams(window.location.search);
     const trackingNumber = urlParams.get('trackingNumber');
+    if (!trackingNumber) {
+        resultElement.textContent = "No tracking number provided in URL.";
+        resultElement.style.color = "red";
+        return;
+    }
 
     // Display tracking number
     document.getElementById("tracking-number").textContent = trackingNumber;
