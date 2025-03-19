@@ -13,14 +13,10 @@ document.addEventListener("DOMContentLoaded", async function () {
         const data = await response.json();
 
         if (response.ok && data.history && data.history.length > 0) {
-            // Render tracking history or any relevant info
             resultElement.textContent = JSON.stringify(data, null, 2);  // Format for viewing
             resultElement.style.color = "green";
-        } else if (data.message) {
-            resultElement.textContent = data.message;
-            resultElement.style.color = "red";
         } else {
-            resultElement.textContent = "No tracking history found.";
+            resultElement.textContent = data.message || "Tracking info not found.";
             resultElement.style.color = "red";
         }
     } catch (error) {
