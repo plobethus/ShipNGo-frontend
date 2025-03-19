@@ -15,11 +15,10 @@
                 <li>
                     <a href="#shipping">Shipping</a>
                     <ul class="dropdown">
-                        <li><a href="#create-shipment">Create a Shipment</a></li>
-                        <li><a href="#rates-delivery">Schedule Rates & Delivery Times</a></li>
-                        <li><a href="#manage-pickups">Schedule & Manage Pickups</a></li>
-                        <li><a href="#packing-supplies">Packing & Shipping Supplies</a></li>
-                        <li><a href="#manage-return">Manage a Return</a></li>
+                        <li><a href="./pages/create-shipment.html">Create a Shipment</a></li>
+                        <li><a href="#">Schedule & Manage Pickups</a></li>
+                        <li><a href="./pages/store.html">Packing & Shipping Supplies</a></li>
+                        <li><a href="./pages/returns.html">Manage a Return</a></li>
                     </ul>
                 </li>
                 <li>
@@ -32,7 +31,7 @@
                     <a href="#support">Support</a>
                     <ul class="dropdown">
                         <li><a href="./pages/faq.html">FAQ</a></li>
-                        <li><a href="#file-claim">File a Claim</a></li>
+                        <li><a href="./pages/claims.html">File a Claim</a></li>
                         <li><a href="#billing-invoicing">Billing & Invoicing</a></li>
                     </ul>
                 </li>
@@ -64,35 +63,7 @@
         <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
     </footer>
 
-    <script>
-        document.getElementById("tracking-form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent page refresh
-    
-            const trackingID = document.getElementById("tracking_id").value.trim();
-            const resultElement = document.getElementById("tracking-result");
-    
-            if (!trackingID) {
-                resultElement.textContent = "Please enter a valid Tracking ID.";
-                resultElement.style.color = "red";
-                return;
-            }
-    
-            // Simulated tracking data
-            const trackingData = {
-                "123456": "Your package is in transit.",
-                "789012": "Your package has been delivered.",
-                "345678": "Your package is out for delivery."
-            };
-    
-            if (trackingData[trackingID]) {
-                // Redirect to trackingpage.html with the tracking ID as a query parameter
-                window.location.href = `trackingpage.html?trackingNumber=${trackingID}`;
-            } else {
-                resultElement.textContent = "Tracking ID not found.";
-                resultElement.style.color = "red";
-            }
-        });
-    </script>
 
+  <script src="scripts/index.js"></script>
 </body>
 </html>

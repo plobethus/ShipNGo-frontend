@@ -8,12 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>ShipNGo - Tracking<h1>
+        <h1>ShipNGo - Tracking</h1>
     </header>
-    
-    <div class="track_id">
-        Tracking Package #INSERT_PACKAGE_NUMBER_HERE
+    <div id="tracking-info">
+        <p><strong>Tracking ID:</strong> <span id="tracking-id"></span></p>
+        <p><strong>Status:</strong> <span id="tracking-status"></span></p>
+        <p><strong>Post Office:</strong> <span id="post-office"></span></p>
+        <p><strong>Warehouse:</strong> <span id="warehouse"></span></p>
+        <p><strong>Route:</strong> <span id="route"></span></p>
     </div>
+    
+    <script src="../scripts/trackingpage.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const trackingNumber = urlParams.get('trackingNumber');
+            console.log("Extracted tracking number:", trackingNumber); // Debugging log
 
+            if (!trackingNumber) {
+                document.getElementById("tracking-info").innerHTML = "<p style='color:red;'>No tracking number provided in URL.</p>";
+                return;
+            }
+        });
+    </script>
 </body>
 </html>
