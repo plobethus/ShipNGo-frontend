@@ -9,12 +9,45 @@
 </head>
 <body>
     <header>
+        <nav>
+            <a href="../../index.html">
+                <h1 class="navbar">ShipNGo</h1>
+            </a>
+            <ul>
+                <li>
+                    <a href="#shipping">Shipping</a>
+                    <ul class="dropdown">
+                        <li><a href="#create-shipment">Create a Shipment</a></li>
+                        <li><a href="#rates-delivery">Schedule Rates & Delivery Times</a></li>
+                        <li><a href="#manage-pickups">Schedule & Manage Pickups</a></li>
+                        <li><a href="#packing-supplies">Packing & Shipping Supplies</a></li>
+                        <li><a href="#manage-return">Manage a Return</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#store">Store</a>
+                    <ul class="dropdown">
+                        <li><a href="../store.html">Explore Services</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#support">Support</a>
+                    <ul class="dropdown">
+                        <li><a href="../faq.html">FAQ</a></li>
+                        <li><a href="../claims.html">File a Claim</a></li>
+                        <li><a href="#billing-invoicing">Billing & Invoicing</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <header>
         <h1>ShipNGo - Dashboard</h1>
-        <div class = "name">
+        <div class="name">
             <div id="welcome-message">Welcome WORKER_NAME_HERE</div>
             <button class="out" onclick="logout()">Log Out</button>
         </div>
-        
     </header>
 
     <div class="package-update">
@@ -35,20 +68,19 @@
 
     <div class="package-container">
         <h2>All Packages</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Package ID</th>
-                <th>Status</th>
-                <th>Location</th>
-            </tr>
-        </thead>
-        <tbody id="package-table">
-            <!-- Packages will be inserted dynamically by JavaScript -->
-        </tbody>
+        <table>
+            <thead>
+                <tr>
+                    <th>Package ID</th>
+                    <th>Status</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody id="package-table">
+                <!-- Packages will be inserted dynamically by JavaScript -->
+            </tbody>
         </table>
     </div>
-    
     
     <script src="../../scripts/employee.js" defer></script>
 </body>

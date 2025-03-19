@@ -111,6 +111,12 @@
     background-color: #004080;
     color: white;
 }
+
+.navbar{
+    margin-right:50px;
+    color: white;
+}
+
 nav ul {
     list-style: none; 
     display: flex;
