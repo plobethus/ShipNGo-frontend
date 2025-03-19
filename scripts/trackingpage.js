@@ -12,12 +12,15 @@ document.addEventListener("DOMContentLoaded", async function () {
         const response = await fetch(`https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/tracking/${trackingNumber}`);
         const data = await response.json();
 
-        if (response.ok) {
+        if (response.ok && data.history && data.history.length > 0) {
             // Render tracking history or any relevant info
             resultElement.textContent = JSON.stringify(data, null, 2);  // Format for viewing
             resultElement.style.color = "green";
+        } else if (data.message) {
+            resultElement.textContent = data.message;
+            resultElement.style.color = "red";
         } else {
-            resultElement.textContent = data.message || "Tracking info not found.";
+            resultElement.textContent = "No tracking history found.";
             resultElement.style.color = "red";
         }
     } catch (error) {
