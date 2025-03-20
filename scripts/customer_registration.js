@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         try {
-            const response = await fetch("https://shipngo-backend/register", {
+            const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/auth/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
