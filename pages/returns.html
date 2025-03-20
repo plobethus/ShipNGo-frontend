@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a Shipment - ShipNGo</title>
-    <link rel="stylesheet" href="../styles/styles.css">
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Returns - ShipNGo</title>
+  <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href = "../index.html">
-                <h1 class = navbar>ShipNGo -  Returns</h1>
-            </a>
-            <ul>
-                <li>
-                    <a href="#shipping">Shipping</a>
-                    <ul class="dropdown">
-                        <li><a href="./create-shipment.html">Create a Shipment</a></li>
-                        <li><a href="./pickups.html">Schedule & Manage Pickups</a></li>
-                        <li><a href="./returns.html">Manage a Return</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#support">Store</a>
-                    <ul class="dropdown">
-                        <li><a href="./store.html">Packing & Shipping Supplies</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#support">Support</a>
-                    <ul class="dropdown">
-                        <li><a href="./faq.html">FAQ</a></li>
-                        <li><a href="./claims.html">File a Claim</a></li>
-                        <li><a href="./billing.html">Billing & Invoicing</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="login">
-                <a href="./login.html" class="btn">Log In</a>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="../index.html">
+        <h1 class="navbar">ShipNGo - Returns</h1>
+      </a>
+      <ul>
+        <li>
+          <a href="#shipping">Shipping</a>
+          <ul class="dropdown">
+            <li><a href="./create-shipment.html">Create a Shipment</a></li>
+            <li><a href="./pickup.html">Schedule &amp; Manage Pickups</a></li>
+            <li><a href="./returns.html">Manage a Return</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#store">Store</a>
+          <ul class="dropdown">
+            <li><a href="./store.html">Packing &amp; Shipping Supplies</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#support">Support</a>
+          <ul class="dropdown">
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./claims.html">File a Claim</a></li>
+            <li><a href="./billing.html">Billing &amp; Invoicing</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="login">
+        <a href="./login.html" class="btn">Log In</a>
+      </div>
+    </nav>
+  </header>
 
     <div class = "shipment-container">
             <h1>Return Form</h1>
@@ -61,36 +61,37 @@
             </div>
 
             <p id="return-result"></p>
+
     </div>
+    <p id="return-result"></p>
+  </div>
 
-    <section id="services" class="services">
-        <h3>Our Services</h3>
-        <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
-    </section>
+  <section id="services" class="services">
+    <h3>Our Services</h3>
+    <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
+  </footer>
 
-    <script>
-        document.getElementById("return-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            const firstName = document.getElementById("first").value;
-            const lastName = document.getElementById("last").value;
-            const packageId = document.getElementById("package-id").value;
-            const receiverAddress = document.getElementById("receiver-address").value;
-            const packageWeight = document.getElementById("package-weight").value;
-
-            if (firstName && lastName && packageId && receiverAddress && packageWeight) {
-                document.getElementById("return-result").textContent = 
-                    `Return Created! Sender: ${firstName} ${lastName}, Package ID: ${packageId}, Receiver Address: ${receiverAddress}, Weight: ${packageWeight} lbs`;
-                document.getElementById("return-result").style.color = "green";
-            } else {
-                document.getElementById("return-result").textContent = "Please fill in all fields.";
-                document.getElementById("return-result").style.color = "red";
-            }
-        });
-    </script>
+  <script>
+    document.getElementById("return-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const firstName = document.getElementById("first").value;
+      const lastName = document.getElementById("last").value;
+      const packageId = document.getElementById("package-id").value;
+      const receiverAddress = document.getElementById("receiver-address").value;
+      const packageWeight = document.getElementById("package-weight").value;
+      if (firstName && lastName && packageId && receiverAddress && packageWeight) {
+        document.getElementById("return-result").textContent = 
+          `Return Created! Sender: ${firstName} ${lastName}, Package ID: ${packageId}, Receiver Address: ${receiverAddress}, Weight: ${packageWeight} lbs`;
+        document.getElementById("return-result").style.color = "green";
+      } else {
+        document.getElementById("return-result").textContent = "Please fill in all fields.";
+        document.getElementById("return-result").style.color = "red";
+      }
+    });
+  </script>
 </body>
 </html>

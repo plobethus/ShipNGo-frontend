@@ -14,14 +14,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         welcomeDiv.innerText = `Welcome, ${name} (${role === "customer" ? "Customer" : "Employee"})!`;
     }
 
-    // Only load packages for employees
-    if (role === "employee") {
-        try {
-            await loadPackages();
-        } catch (error) {
-            console.error("Error loading packages on page load:", error);
-        }
-    }
 });
 
 function logout() {

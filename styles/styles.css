@@ -108,6 +108,10 @@
     text-align: center;
     padding: 20px;
   }
+
+  .services{
+    margin: 0px 8px;
+  }
   
   nav {
     display: flex;
@@ -239,18 +243,52 @@ nav ul li:hover .dropdown {
     justify-content:left;
 }
 
+.package-controls{
+    display:flex;
+    flex-direction:column;
+    margin: 16px auto;
+    margin-top:10px;
+    text-align: center;
+    background-color: #004080;
+    color:white;
+    width:82%;
+    padding:16px;
+    border-radius:15px;
+}
+
+.control-container{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    margin: 0px auto;
+    margin-top:10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    color:white;
+    padding:16px;
+    border-radius:15px;
+    gap:16px;
+    justify-content:center;
+}
+
 .package-container {
     display:flex;
     flex-direction:column;
-    width:800px;
     margin: 20px auto;
     text-align: center;
+    background-color: #004080;
+    color:white;
+    border-radius:15px;
+    padding:8px;
 }
 
 #package-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color:white;
+    border-radius:15px;
 }
 
 #package-table th, #package-table td {

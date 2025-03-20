@@ -8,30 +8,49 @@
     <script src="../../scripts/dashboard.js"></script>
 </head>
 <body>
-    <header>
-        <h1 class="navbar">ShipNGo - Dashboard</h1>
-            
-        <div class="name">
-            <div id="welcome-message">Welcome WORKER_NAME_HERE</div>
-            <button class="out" onclick="logout()">Log Out</button>
-        </div>
-    </header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard - ShipNGo</title>
+  <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../../index.html">
+        <h1 class="navbar">ShipNGo</h1>
+      </a>
+      <ul>
+        <li>
+          <a href="#shipping">Shipping</a>
+          <ul class="dropdown">
+            <li><a href="../create_shipment.html">Create a Shipment</a></li>
+            <li><a href="../pickup.html">Schedule &amp; Manage Pickups</a></li>
+            <li><a href="../returns.html">Manage a Return</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#store">Store</a>
+          <ul class="dropdown">
+            <li><a href="../store.html">Packing &amp; Shipping Supplies</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#support">Support</a>
+          <ul class="dropdown">
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../claims.html">File a Claim</a></li>
+            <li><a href="../billing.html">Billing &amp; Invoicing</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="worker_input">
-        <div><h2>Your Packages</h2></div>
-        <div>Loading...</div>
-    </div>
-
-    <div>
-        <section id="services" class="services">
-            <h3>Our Services</h3>
-            <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
-        </section>
-        
-        <footer>
-            <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
-        </footer>
-    </div>
-    <script src="../../scripts/customer.js"></script>
+  <div class="worker_input" id="customer-packages">
+    <h2>Your Packages</h2>
+    <p>Loading...</p>
+  </div>
+  <script src="../../scripts/customer.js"></script>
+>>>>>>> b0a9a1fd66911f00bdf19a0b000bf3a2457bd8ac
 </body>
 </html>
