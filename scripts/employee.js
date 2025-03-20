@@ -3,24 +3,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const role = sessionStorage.getItem("role");
   
     if (!token || role !== "employee") {
-      window.location.href = "../login.html";
-      return;
-    }
-  
-    // Add event listeners for filtering inputs (if present)
-    document.getElementById("status-filter")?.addEventListener("change", loadPackages);
-    document.getElementById("search-customer")?.addEventListener("input", loadPackages);
-    document.getElementById("start-date")?.addEventListener("change", loadPackages);
-    document.getElementById("end-date")?.addEventListener("change", loadPackages);
-    document.getElementById("min-weight")?.addEventListener("input", loadPackages);
-    document.getElementById("max-weight")?.addEventListener("input", loadPackages);
-    document.getElementById("address-filter")?.addEventListener("input", loadPackages);
-  
+
     try {
       await loadPackages();
     } catch (error) {
       console.error("Error loading packages on page load:", error);
     }
+
   });
   
   async function loadPackages() {
@@ -101,3 +90,4 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("Error updating package. Please try again.");
     }
   }
+
