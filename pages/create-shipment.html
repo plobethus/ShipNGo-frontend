@@ -1,57 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a Shipment | ShipNGo</title>
+    <title>Create a Shipment - ShipNGo</title>
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <h1>ShipNGo</h1>
+            <a href = "../index.html">
+                <h1 class = navbar>ShipNGo - Create a Shipment</h1>
+            </a>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="./store.html">Store</a></li>
-                <li><a href="./faq.html">Support</a></li>
+                <li>
+                    <a href="#shipping">Shipping</a>
+                    <ul class="dropdown">
+                        <li><a href="./create-shipment.html">Create a Shipment</a></li>
+                        <li><a href="./pickups.html">Schedule & Manage Pickups</a></li>
+                        <li><a href="./returns.html">Manage a Return</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#support">Store</a>
+                    <ul class="dropdown">
+                        <li><a href="./store.html">Packing & Shipping Supplies</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#support">Support</a>
+                    <ul class="dropdown">
+                        <li><a href="./faq.html">FAQ</a></li>
+                        <li><a href="./claims.html">File a Claim</a></li>
+                        <li><a href="./billing.html">Billing & Invoicing</a></li>
+                    </ul>
+                </li>
             </ul>
             <div class="login">
-                <a href="login.html" class="btn">Log In</a>
+                <a href="./login.html" class="btn">Log In</a>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section class="shipment-form">
-            <h2>Create a Shipment</h2>
-            <form id="shipment-form">
-                <label for="sender-name">Sender Name:</label>
-                <input type="text" id="sender-name" name="sender-name" required>
+    <div class = "shipment-container">
+            <h1>Create a Shipment</h1>
+            <div>
+                <form class = "shipment-form">
+                    <input type="text" id="sender-name" name="sender-name" placeholder="Sender Name" required>
 
-                <label for="sender-address">Sender Address:</label>
-                <input type="text" id="sender-address" name="sender-address" required>
+                    <input type="text" id="sender-address" name="sender-address" placeholder="Sender Address" required>
 
-                <label for="receiver-name">Receiver Name:</label>
-                <input type="text" id="receiver-name" name="receiver-name" required>
+                    <input type="text" id="receiver-name" name="receiver-name" placeholder="Receiver Name" required>
 
-                <label for="receiver-address">Receiver Address:</label>
-                <input type="text" id="receiver-address" name="receiver-address" required>
+                    <input type="text" id="receiver-address" name="receiver-address" placeholder="Receiver Address"required>
 
-                <label for="package-weight">Package Weight (lbs):</label>
-                <input type="number" id="package-weight" name="package-weight" required>
+                    <input type="number" id="package-weight" name="package-weight" placeholder="Package Weight (lbs)"required>
 
-                <label for="shipping-option">Shipping Option:</label>
-                <select id="shipping-option" name="shipping-option" required>
-                    <option value="standard">Standard (5-7 Days)</option>
-                    <option value="express">Express (2-3 Days)</option>
-                    <option value="overnight">Overnight</option>
-                </select>
+                    <select id="shipping-option" name="shipping-option" required>
+                        <option value="Shipping Option">Shipping Option</option>
+                        <option value="standard">Standard (5-7 Days)</option>
+                        <option value="express">Express (2-3 Days)</option>
+                        <option value="overnight">Overnight</option>
+                    </select>
 
-                <button type="submit" class="btn">Submit Shipment</button>
-            </form>
+                    <button type="submit" class="btn">Submit Shipment</button>
+                </form>
+            </div>
+
             <p id="shipment-result"></p>
-        </section>
-    </main>
+    </div>
+
+    <section id="services" class="services">
+        <h3>Our Services</h3>
+        <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
+    </section>
 
     <footer>
         <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
