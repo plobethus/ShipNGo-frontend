@@ -228,14 +228,17 @@ nav ul li:hover .dropdown {
 
 .worker_input{
     display:flex;
-    width:800px;
-    height:100px;
-    background-color: #004080;
-    color:white;
-    justify-content:center;
+    flex-direction:column;
     margin: 64px auto;
     border-radius:15px;
+    padding:20px;
 }
+
+.package-item{
+    display:flex;
+    justify-content:left;
+}
+
 .package-container {
     display:flex;
     flex-direction:column;
@@ -371,4 +374,18 @@ input, textarea, button, select {
     border-radius: 5px;
     outline: none;
     font-size: 14px;
+}
+
+/* trackingpage styling */
+.tracking-title{
+    display:flex;
+    justify-content:center;
+}
+
+/* billing styling*/
+#billing{
+    display:flex;
+    justify-content:space-between;
+    width:800px;
+    height:200px;
 }
