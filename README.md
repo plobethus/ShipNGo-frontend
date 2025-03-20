@@ -10,7 +10,7 @@ This is the html/css and javascript hosted on vercel for the website ShipNGo
 
 ## Website
 [ShipNGo](https://ship-n-go-frontend.vercel.app)
-
+[backend](https://github.com/plobethus/ShipNGo-backend)
 ## Structure
 ```
 ShipNGo-frontend/
