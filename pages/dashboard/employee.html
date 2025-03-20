@@ -1,82 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Employee Dashboard - ShipNGo</title>
-    <link rel="stylesheet" href="../../styles/styles.css">
-    <script src="../../scripts/dashboard.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Dashboard - ShipNGo</title>
+  <link rel="stylesheet" href="../../styles/styles.css">
+  <script src="../../scripts/dashboard.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../../index.html">
-                <h1 class="navbar">ShipNGo</h1>
-            </a>
-            <ul>
-                <li>
-                    <a href="#shipping">Shipping</a>
-                    <ul class="dropdown">
-                        <li><a href="../create-shipment.html">Create a Shipment</a></li>
-                        <li><a href="../pickups.html">Schedule & Manage Pickups</a></li>
-                        <li><a href="../returns.html">Manage a Return</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#store">Store</a>
-                    <ul class="dropdown">
-                        <li><a href="../store.html">Packing & Shipping Supplies</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#support">Support</a>
-                    <ul class="dropdown">
-                        <li><a href="../faq.html">FAQ</a></li>
-                        <li><a href="../claims.html">File a Claim</a></li>
-                        <li><a href="../billing.html">Billing & Invoicing</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="name">
-            <div id="welcome-message">Welcome WORKER_NAME_HERE</div>
-            <button class="out" onclick="logout()">Log Out</button>
-        </div>
-    </header>
-
-    <div class="package-update">
-        <h2>Update Package</h2>
-        <form id="update-package-form">
-            <label for="package-id">Package ID:</label>
-            <input type="text" id="package-id" required>
-    
-            <label for="new-status">New Status:</label>
-            <input type="text" id="new-status">
-    
-            <label for="new-location">New Location:</label>
-            <input type="text" id="new-location">
-    
-            <button type="submit">Update</button>
-        </form>
+  <header>
+    <nav>
+      <a href="../../index.html">
+        <h1 class="navbar">ShipNGo</h1>
+      </a>
+      <ul>
+        <li>
+          <a href="#shipping">Shipping</a>
+          <ul class="dropdown">
+            <li><a href="../create_shipment.html">Create a Shipment</a></li>
+            <li><a href="../pickup.html">Schedule &amp; Manage Pickups</a></li>
+            <li><a href="../returns.html">Manage a Return</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#store">Store</a>
+          <ul class="dropdown">
+            <li><a href="../store.html">Packing &amp; Shipping Supplies</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#support">Support</a>
+          <ul class="dropdown">
+            <li><a href="../faq.html">FAQ</a></li>
+            <li><a href="../claims.html">File a Claim</a></li>
+            <li><a href="../billing.html">Billing &amp; Invoicing</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="name">
+      <div id="welcome-message">Welcome WORKER_NAME_HERE</div>
+      <button class="out" onclick="logout()">Log Out</button>
     </div>
+  </header>
 
-    <div class="package-container">
-        <h2>All Packages</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Package ID</th>
-                    <th>Status</th>
-                    <th>Location</th>
-                </tr>
-            </thead>
-            <tbody id="package-table">
-                <!-- Packages will be inserted dynamically by JavaScript -->
-            </tbody>
-        </table>
-    </div>
-    
-    <script src="../../scripts/employee.js" defer></script>
+  <!-- Filtering Controls -->
+  <div class="package-controls">
+    <label for="status-filter">Filter by Status:</label>
+    <select id="status-filter">
+      <option value="">All</option>
+      <option value="Pending">Pending</option>
+      <option value="In Transit">In Transit</option>
+      <option value="Delivered">Delivered</option>
+    </select>
+
+    <label for="search-customer">Search by Customer:</label>
+    <input type="text" id="search-customer" placeholder="Enter customer name">
+
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date">
+
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date">
+
+    <label for="min-weight">Min Weight:</label>
+    <input type="number" id="min-weight" step="any" placeholder="Min weight">
+
+    <label for="max-weight">Max Weight:</label>
+    <input type="number" id="max-weight" step="any" placeholder="Max weight">
+
+    <label for="address-filter">Address:</label>
+    <input type="text" id="address-filter" placeholder="Enter address">
+  </div>
+
+  <!-- Package Table -->
+  <div class="package-container">
+    <h2>All Packages</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Package ID</th>
+          <th>Status</th>
+          <th>Weight</th>
+          <th>Dimensions</th>
+          <th>Address From</th>
+          <th>Address To</th>
+          <th>Customer Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="package-table">
+        <!-- Packages are inserted dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../../scripts/employee.js" defer></script>
 </body>
 </html>

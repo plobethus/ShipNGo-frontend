@@ -1,80 +1,74 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claims - ShipNGo</title>
-    <link rel="stylesheet" href="../styles/claims.css">
-    <script src="../scripts/claims.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claims - ShipNGo</title>
+  <link rel="stylesheet" href="../styles/claims.css">
+  <script src="../scripts/claims.js"></script>
 </head>
 <body>
-
-    <header>
-        <nav>
-            <a href = "../index.html">
-                <h1 class = navbar>ShipNGo - Claims</h1>
-            </a>
-            <ul>
-                <li>
-                    <a href="#shipping">Shipping</a>
-                    <ul class="dropdown">
-                        <li><a href="./create-shipment.html">Create a Shipment</a></li>
-                        <li><a href="./pickups.html">Schedule & Manage Pickups</a></li>
-                        <li><a href="./returns.html">Manage a Return</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#support">Store</a>
-                    <ul class="dropdown">
-                        <li><a href="./store.html">Packing & Shipping Supplies</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#support">Support</a>
-                    <ul class="dropdown">
-                        <li><a href="./faq.html">FAQ</a></li>
-                        <li><a href="./claims.html">File a Claim</a></li>
-                        <li><a href="./billing.html">Billing & Invoicing</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="login">
-                <a href="./login.html" class="btn">Log In</a>
-            </div>
-        </nav>
-    </header>
-    
-    <div class="container">
-        <h1>Support Center</h1>
-
-
-        <div class="card">
-
-            <form id="support-form">
-                <input type="text" id="name" placeholder="Name" required>
-                <input type="email" id="email" placeholder="Email" required>
-                <input type="text" id="phone" placeholder="Phone Number" required>
-                <textarea placeholder="Describe your issue..." required></textarea>
-                <button class = "submit">Submit</button>
-            </form>
-        </div>
-
-        <div class="card">
-            <h2>Past Support Tickets</h2>
-            <ul id="ticket-list">
-                <li class="empty">No support tickets yet.</li>
-            </ul>
-        </div>
+  <header>
+    <nav>
+      <a href="../index.html">
+        <h1 class="navbar">ShipNGo - Claims</h1>
+      </a>
+      <ul>
+        <li>
+          <a href="#shipping">Shipping</a>
+          <ul class="dropdown">
+            <li><a href="./create_shipment.html">Create a Shipment</a></li>
+            <li><a href="./pickup.html">Schedule &amp; Manage Pickups</a></li>
+            <li><a href="./returns.html">Manage a Return</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#support">Store</a>
+          <ul class="dropdown">
+            <li><a href="./store.html">Packing &amp; Shipping Supplies</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#support">Support</a>
+          <ul class="dropdown">
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./claims.html">File a Claim</a></li>
+            <li><a href="./billing.html">Billing &amp; Invoicing</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="login">
+        <a href="./login.html" class="btn">Log In</a>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1>Support Center</h1>
+    <div class="card">
+      <form id="support-form">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <textarea id="issue" placeholder="Describe your issue..." required></textarea>
+        <button class="submit">Submit</button>
+      </form>
     </div>
+    <div class="card">
+      <h2>Past Support Tickets</h2>
+      <ul id="ticket-list">
+        <li class="empty">No support tickets yet.</li>
+      </ul>
+    </div>
+  </div>
 
-    <section id="services" class="services">
-        <h3>Our Services</h3>
-        <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
-    </footer>
-    
+  <section id="services" class="services">
+    <h3>Our Services</h3>
+    <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
+  </footer>
 </body>
 </html>
