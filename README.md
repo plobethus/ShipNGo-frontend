@@ -8,7 +8,7 @@ This is the html/css and javascript hosted on vercel for the website ShipNGo
 - [Sam](https://github.com/SamuelAlvarez690)
 - [Yusuf](https://github.com/GlowSand)
 
-## Website
+## Links
 - [ShipNGo](https://ship-n-go-frontend.vercel.app)
 - [back end](https://github.com/plobethus/ShipNGo-backend)
 ## Structure
