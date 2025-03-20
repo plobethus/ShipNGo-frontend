@@ -62,25 +62,3 @@ async function loadPackages() {
         console.error("Error loading packages:", error);
     }
 }
-
-async function editPackage(packageId, newStatus) {
-    try {
-        const response = await fetch(`https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/packages/${packageId}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${sessionStorage.getItem("token")}`
-            },
-            body: JSON.stringify({ status: newStatus }),
-        });
-
-        if (response.ok) {
-            alert("Package updated successfully!");
-            await loadPackages();
-        } else {
-            alert("Failed to update package.");
-        }
-    } catch (error) {
-        console.error("Error updating package:", error);
-    }
-}
