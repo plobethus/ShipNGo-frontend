@@ -1,16 +1,18 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const token = sessionStorage.getItem("token");
-    const role = sessionStorage.getItem("role");
-  
-    if (!token || role !== "employee") {
+  const token = sessionStorage.getItem("token");
+  const role = sessionStorage.getItem("role");
 
-    try {
+  if (!token || role !== "employee") {
+      window.location.href = "../login.html";
+      return;
+  }
+
+  try {
       await loadPackages();
-    } catch (error) {
+  } catch (error) {
       console.error("Error loading packages on page load:", error);
-    }
-
-  });
+  }
+});
   
   async function loadPackages() {
     console.log("Fetching packages...");
