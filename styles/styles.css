@@ -108,6 +108,10 @@
     text-align: center;
     padding: 20px;
   }
+
+  .services{
+    margin: 0px 8px;
+  }
   
   nav {
     display: flex;
@@ -183,7 +187,7 @@ nav ul li:hover .dropdown {
   display: block;
 }
 
-/* Tracking Page Styling */
+/* index Page Styling */
 
 .track_id{
     display:flex;
@@ -197,7 +201,20 @@ nav ul li:hover .dropdown {
     border-radius:10px;
     width:800px;
     height:100px;
-    
+}
+
+.tracking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+.tracking-content {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Worker styles */
@@ -215,26 +232,63 @@ nav ul li:hover .dropdown {
 
 .worker_input{
     display:flex;
-    width:800px;
-    height:100px;
-    background-color: #004080;
-    color:white;
-    justify-content:center;
+    flex-direction:column;
     margin: 64px auto;
     border-radius:15px;
+    padding:20px;
 }
+
+.package-item{
+    display:flex;
+    justify-content:left;
+}
+
+.package-controls{
+    display:flex;
+    flex-direction:column;
+    margin: 16px auto;
+    margin-top:10px;
+    text-align: center;
+    background-color: #004080;
+    color:white;
+    width:82%;
+    padding:16px;
+    border-radius:15px;
+}
+
+.control-container{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    margin: 0px auto;
+    margin-top:10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    color:white;
+    padding:16px;
+    border-radius:15px;
+    gap:16px;
+    justify-content:center;
+}
+
 .package-container {
     display:flex;
     flex-direction:column;
-    width:800px;
     margin: 20px auto;
     text-align: center;
+    background-color: #004080;
+    color:white;
+    border-radius:15px;
+    padding:8px;
 }
 
 #package-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color:white;
+    border-radius:15px;
 }
 
 #package-table th, #package-table td {
@@ -324,22 +378,6 @@ nav ul li:hover .dropdown {
     width:165px;
 }
 
-/* Tracking styles */
-
-.tracking {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.tracking-content {
-  text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
 
 /* create-shipment styling */
 .shipment-container{
@@ -374,4 +412,18 @@ input, textarea, button, select {
     border-radius: 5px;
     outline: none;
     font-size: 14px;
+}
+
+/* trackingpage styling */
+.tracking-title{
+    display:flex;
+    justify-content:center;
+}
+
+/* billing styling*/
+#billing{
+    display:flex;
+    justify-content:space-between;
+    width:800px;
+    height:200px;
 }
