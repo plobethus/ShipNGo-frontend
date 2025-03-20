@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register - ShipNGo</title>
+    <title>Billing - ShipNGo</title>
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-
-    <!-- Header section for the login page -->
     <header>
         <nav>
             <a href = "../index.html">
-                <h1 class = navbar>ShipNGo - Register</h1>
+                <h1 class = navbar>ShipNGo - Billing & Invoicing</h1>
             </a>
             <ul>
                 <li>
                     <a href="#shipping">Shipping</a>
                     <ul class="dropdown">
                         <li><a href="./create-shipment.html">Create a Shipment</a></li>
-                        <li><a href="./pickups.html">Schedule & Manage Pickups</a></li>
+                        <li><a href="#">Schedule & Manage Pickups</a></li>
                         <li><a href="./returns.html">Manage a Return</a></li>
                     </ul>
                 </li>
@@ -32,7 +30,7 @@
                 <li>
                     <a href="#support">Support</a>
                     <ul class="dropdown">
-                        <li><a href="./pages/faq.html">FAQ</a></li>
+                        <li><a href="./faq.html">FAQ</a></li>
                         <li><a href="./claims.html">File a Claim</a></li>
                         <li><a href="./billing.html">Billing & Invoicing</a></li>
                     </ul>
@@ -44,25 +42,6 @@
         </nav>
     </header>
 
-    <!-- Main container for the login form -->
-    <section class="login-container">
-        <div class = "login-title">Customer Registration</div>
-        <!-- Form for user login -->
-        <form id="login-form">
-                <input type="text" id="name" name="name" placeholder="Name" required>
-                <input type="text" id="address" name="address" placeholder="Address" required>
-                <input type="text" id="phone" name="phone" placeholder ="Phone" required>
-                <input type="text" id="email" name="email" placeholder="Email" required>
-                <input type="password" id="password" name="password" placeholder ="Password" required>
-                <button type="submit" class = "login-button">Register</button>
-        </form>
-
-        <!-- Displays login messages/errors -->
-        <p id="message"></p>
-        <p id="login-result"></p>
-        <script src="../scripts/customer_registration.js"></script>
-    </section>
-
     <div>
     <section id="services" class="services">
         <h3>Our Services</h3>
@@ -73,6 +52,5 @@
         <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
     </footer>
     </div>
-
 </body>
 </html>
