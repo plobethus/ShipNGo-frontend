@@ -183,7 +183,7 @@ nav ul li:hover .dropdown {
   display: block;
 }
 
-/* Tracking Page Styling */
+/* index Page Styling */
 
 .track_id{
     display:flex;
@@ -197,7 +197,20 @@ nav ul li:hover .dropdown {
     border-radius:10px;
     width:800px;
     height:100px;
-    
+}
+
+.tracking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+.tracking-content {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Worker styles */
@@ -322,22 +335,6 @@ nav ul li:hover .dropdown {
 /* Registration styles */
 #classification{
     width:165px;
-}
-
-/* Tracking styles */
-
-.tracking {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.tracking-content {
-  text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 
