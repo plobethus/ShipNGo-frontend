@@ -1,135 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store - ShipNGo</title>
-    <link rel="stylesheet" href="../styles/store.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store - ShipNGo</title>
+  <link rel="stylesheet" href="../styles/store.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="../index.html">
-                <h1 class="navbar">ShipNGo - Store</h1>
-            </a>
-            <ul>
-                <li>
-                    <a href="#">Shipping</a>
-                    <ul class="dropdown">
-                        <li><a href="./create-shipment.html">Create a Shipment</a></li>
-                        <li><a href="./pickups.html">Schedule & Manage Pickups</a></li>
-                        <li><a href="./returns.html">Manage a Return</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Store</a>
-                    <ul class="dropdown">
-                        <li><a href="./store.html">Packing & Shipping Supplies</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Support</a>
-                    <ul class="dropdown">
-                        <li><a href="./faq.html">FAQ</a></li>
-                        <li><a href="./claims.html">File a Claim</a></li>
-                        <li><a href="./billing.html">Billing & Invoicing</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="login">
-                <a href="./login.html" class="btn">Log In</a>
-            </div>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <a href="../index.html">
+        <h1 class="navbar">ShipNGo - Store</h1>
+      </a>
+      <ul>
+        <li>
+          <a href="#">Shipping</a>
+          <ul class="dropdown">
+            <li><a href="./create_shipment.html">Create a Shipment</a></li>
+            <li><a href="./pickup.html">Schedule &amp; Manage Pickups</a></li>
+            <li><a href="./returns.html">Manage a Return</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Store</a>
+          <ul class="dropdown">
+            <li><a href="./store.html">Packing &amp; Shipping Supplies</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Support</a>
+          <ul class="dropdown">
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./claims.html">File a Claim</a></li>
+            <li><a href="./billing.html">Billing &amp; Invoicing</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="login">
+        <a href="./login.html" class="btn">Log In</a>
+      </div>
+    </nav>
+  </header>
 
-    <div class="store_page">
-        <div class="items">
-            <div class="store_item" data-name="Envelope" data-price="0.99">
-                <div>Envelope ($0.99 each) 📨</div>
-                <div class="price">
-                    <button class="cart" data-amount="-100">Add</button>
-                    <button class="cart" data-amount="-1">Remove</button>
-                    <select>
-                        <option>1</option>
-                        <option>10</option>
-                        <option>100</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="store_item" data-name="Box" data-price="1.99">
-                <div>Boxes ($1.99 each) 📦</div>
-                <div class="price">
-                    <div class="price">
-                        <button class="cart" data-amount="-100">Add</button>
-                        <button class="cart" data-amount="-1">Remove</button>
-                        <select>
-                            <option>1</option>
-                            <option>10</option>
-                            <option>100</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="store_item" data-name="Tape" data-price="1.99">
-                <div>Tape ($1.99 each) 🗞</div>
-                <div class="price">
-                    <div class="price">
-                        <button class="cart" data-amount="-100">Add</button>
-                        <button class="cart" data-amount="-1">Remove</button>
-                        <select>
-                            <option>1</option>
-                            <option>10</option>
-                            <option>100</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="store_item" data-name="Stamps" data-price="1.99">
-                <div>Stamps ($1.99 per booklet) 📫</div>
-                <div class="price">
-                    <button class="cart" data-amount="-100">Add</button>
-                    <button class="cart" data-amount="-1">Remove</button>
-                    <select>
-                        <option>1</option>
-                        <option>10</option>
-                        <option>100</option>
-                    </select>
-                </div>
-            </div>
-            <div class="store_item" data-name="Label" data-price="1.99">
-                <div>Label ($1.99 each) 🏷</div>
-                <div class="price">
-                    <button class="cart" data-amount="-100">Add</button>
-                    <button class="cart" data-amount="-1">Remove</button>
-                    <select>
-                        <option>1</option>
-                        <option>10</option>
-                        <option>100</option>
-                    </select>
-                </div>
-            </div>
+  <div class="store_page">
+    <div class="items">
+      <div class="store_item" data-name="Envelope" data-price="0.99">
+        <div>Envelope ($0.99 each) 📨</div>
+        <div class="price">
+          <button class="cart" data-amount="1">Add</button>
+          <button class="cart" data-amount="-1">Remove</button>
+          <select>
+            <option>1</option>
+            <option>10</option>
+            <option>100</option>
+          </select>
         </div>
-
-        <div class="checkout">
-            <h2>Checkout</h2>
-            <div class = "total">
-                <div>Total Items: <span id="total-items">0</span></div>
-                <div>Total Cost: $<span id="total-cost">0.00</span></div>
-            </div>
+      </div>
+      <div class="store_item" data-name="Box" data-price="1.99">
+        <div>Boxes ($1.99 each) 📦</div>
+        <div class="price">
+          <button class="cart" data-amount="1">Add</button>
+          <button class="cart" data-amount="-1">Remove</button>
+          <select>
+            <option>1</option>
+            <option>10</option>
+            <option>100</option>
+          </select>
         </div>
+      </div>
+      <!-- Add more store items as needed -->
     </div>
+    <div class="checkout">
+      <h2>Checkout</h2>
+      <div class="total">
+        <div>Total Items: <span id="total-items">0</span></div>
+        <div>Total Cost: $<span id="total-cost">0.00</span></div>
+      </div>
+    </div>
+  </div>
 
-    <section id="services" class="services">
-        <h3>Our Services</h3>
-        <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
-    </section>
-    
-    <footer>
-        <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
-    </footer>
+  <section id="services" class="services">
+    <h3>Our Services</h3>
+    <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
+  </section>
+  
+  <footer>
+    <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
+  </footer>
 
-
-    <script src="../scripts/store.js" defer></script>
+  <script src="../scripts/store.js" defer></script>
 </body>
 </html>
