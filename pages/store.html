@@ -17,15 +17,14 @@
                     <a href="#">Shipping</a>
                     <ul class="dropdown">
                         <li><a href="./create-shipment.html">Create a Shipment</a></li>
-                        <li><a href="#">Schedule & Manage Pickups</a></li>
-                        <li><a href="./store.html">Packing & Shipping Supplies</a></li>
+                        <li><a href="./pickups.html">Schedule & Manage Pickups</a></li>
                         <li><a href="./returns.html">Manage a Return</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">Store</a>
                     <ul class="dropdown">
-                        <li><a href="./store.html">Explore Services</a></li>
+                        <li><a href="./store.html">Packing & Shipping Supplies</a></li>
                     </ul>
                 </li>
                 <li>
@@ -33,7 +32,7 @@
                     <ul class="dropdown">
                         <li><a href="./faq.html">FAQ</a></li>
                         <li><a href="./claims.html">File a Claim</a></li>
-                        <li><a href="#">Billing & Invoicing</a></li>
+                        <li><a href="./billing.html">Billing & Invoicing</a></li>
                     </ul>
                 </li>
             </ul>
@@ -46,69 +45,90 @@
     <div class="store_page">
         <div class="items">
             <div class="store_item" data-name="Envelope" data-price="0.99">
-                <div>Envelope ($0.99 each)</div>
+                <div>Envelope ($0.99 each) 📨</div>
                 <div class="price">
-                    <button class="cart sub" data-amount="-1">-1</button>
-                    <button class="cart sub" data-amount="-10">-10</button>
-                    <button class="cart sub" data-amount="-100">-100</button>
-                    <button class="cart add" data-amount="1">+1</button>
-                    <button class="cart add" data-amount="10">+10</button>
-                    <button class="cart add" data-amount="100">+100</button>
+                    <button class="cart" data-amount="-100">Add</button>
+                    <button class="cart" data-amount="-1">Remove</button>
+                    <select>
+                        <option>1</option>
+                        <option>10</option>
+                        <option>100</option>
+                    </select>
                 </div>
             </div>
 
             <div class="store_item" data-name="Box" data-price="1.99">
-                <div>Boxes ($1.99 each)</div>
+                <div>Boxes ($1.99 each) 📦</div>
                 <div class="price">
-                    <button class="cart sub" data-amount="-1">-1</button>
-                    <button class="cart sub" data-amount="-10">-10</button>
-                    <button class="cart sub" data-amount="-100">-100</button>
-                    <button class="cart add" data-amount="1">+1</button>
-                    <button class="cart add" data-amount="10">+10</button>
-                    <button class="cart add" data-amount="100">+100</button>
+                    <div class="price">
+                        <button class="cart" data-amount="-100">Add</button>
+                        <button class="cart" data-amount="-1">Remove</button>
+                        <select>
+                            <option>1</option>
+                            <option>10</option>
+                            <option>100</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="store_item" data-name="Tape" data-price="1.99">
-                <div>Tape ($1.99 each)</div>
+                <div>Tape ($1.99 each) 🗞</div>
                 <div class="price">
-                    <button class="cart sub" data-amount="-1">-1</button>
-                    <button class="cart sub" data-amount="-10">-10</button>
-                    <button class="cart sub" data-amount="-100">-100</button>
-                    <button class="cart add" data-amount="1">+1</button>
-                    <button class="cart add" data-amount="10">+10</button>
-                    <button class="cart add" data-amount="100">+100</button>
+                    <div class="price">
+                        <button class="cart" data-amount="-100">Add</button>
+                        <button class="cart" data-amount="-1">Remove</button>
+                        <select>
+                            <option>1</option>
+                            <option>10</option>
+                            <option>100</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="store_item" data-name="Stamps" data-price="1.99">
-                <div>Stamps ($1.99 per booklet)</div>
+                <div>Stamps ($1.99 per booklet) 📫</div>
                 <div class="price">
-                    <button class="cart sub" data-amount="-1">-1</button>
-                    <button class="cart sub" data-amount="-10">-10</button>
-                    <button class="cart sub" data-amount="-100">-100</button>
-                    <button class="cart add" data-amount="1">+1</button>
-                    <button class="cart add" data-amount="10">+10</button>
-                    <button class="cart add" data-amount="100">+100</button>
+                    <button class="cart" data-amount="-100">Add</button>
+                    <button class="cart" data-amount="-1">Remove</button>
+                    <select>
+                        <option>1</option>
+                        <option>10</option>
+                        <option>100</option>
+                    </select>
                 </div>
             </div>
             <div class="store_item" data-name="Label" data-price="1.99">
-                <div>Label ($1.99 each)</div>
+                <div>Label ($1.99 each) 🏷</div>
                 <div class="price">
-                    <button class="cart sub" data-amount="-1">-1</button>
-                    <button class="cart sub" data-amount="-10">-10</button>
-                    <button class="cart sub" data-amount="-100">-100</button>
-                    <button class="cart add" data-amount="1">+1</button>
-                    <button class="cart add" data-amount="10">+10</button>
-                    <button class="cart add" data-amount="100">+100</button>
+                    <button class="cart" data-amount="-100">Add</button>
+                    <button class="cart" data-amount="-1">Remove</button>
+                    <select>
+                        <option>1</option>
+                        <option>10</option>
+                        <option>100</option>
+                    </select>
                 </div>
             </div>
         </div>
 
         <div class="checkout">
             <h2>Checkout</h2>
-            <p>Total Items: <span id="total-items">0</span></p>
-            <p>Total Cost: $<span id="total-cost">0.00</span></p>
+            <div class = "total">
+                <div>Total Items: <span id="total-items">0</span></div>
+                <div>Total Cost: $<span id="total-cost">0.00</span></div>
+            </div>
         </div>
     </div>
+
+    <section id="services" class="services">
+        <h3>Our Services</h3>
+        <p>We provide local and international shipping, express delivery, and secure parcel handling.</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 ShipNGo Courier. All rights reserved.</p>
+    </footer>
+
 
     <script src="../scripts/store.js" defer></script>
 </body>
