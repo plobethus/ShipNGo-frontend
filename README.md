@@ -12,6 +12,7 @@ This is the html/css and javascript hosted on vercel for the website ShipNGo
 [ShipNGo](https://ship-n-go-frontend.vercel.app)
 
 ## Structure
+```
 ShipNGo-frontend/
 │── 📂 pages/
 │   │── 📂 dashboard/
@@ -44,4 +45,4 @@ ShipNGo-frontend/
 │   │── styles.css
 │── index.html
 │── README.md
-
+```
