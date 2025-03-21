@@ -75,14 +75,48 @@
   <script>
     document.querySelector(".shipment-form").addEventListener("submit", function(event) {
       event.preventDefault();
-      const sender = document.getElementById("sender-name").value;
-      const receiver = document.getElementById("receiver-name").value;
-      const weight = document.getElementById("package-weight").value;
+
+      // Collect form data
+      const senderName = document.getElementById("sender-name").value;
+      const senderAddress = document.getElementById("sender-address").value;
+      const receiverName = document.getElementById("receiver-name").value;
+      const receiverAddress = document.getElementById("receiver-address").value;
+      const packageWeight = document.getElementById("package-weight").value;
       const shippingOption = document.getElementById("shipping-option").value;
-      if (sender && receiver && weight && shippingOption) {
-        document.getElementById("shipment-result").textContent = 
-          `Shipment Created! Sender: ${sender}, Receiver: ${receiver}, Weight: ${weight} lbs, Option: ${shippingOption}`;
-        document.getElementById("shipment-result").style.color = "green";
+
+      // Check if all fields are filled
+      if (senderName && senderAddress && receiverName && receiverAddress && packageWeight && shippingOption) {
+        
+        // Prepare data for the POST request
+        const shipmentData = {
+          sender_name: senderName,
+          sender_address: senderAddress,
+          receiver_name: receiverName,
+          receiver_address: receiverAddress,
+          weight: packageWeight,
+          shipping_option: shippingOption
+        };
+
+        // Send data to the backend via API
+        fetch("http://localhost:3000/api/shipments", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(shipmentData)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById("shipment-result").textContent = 
+            `Shipment Created! Tracking ID: ${data.ID}, Sender: ${senderName}, Receiver: ${receiverName}, Weight: ${packageWeight} lbs, Option: ${shippingOption}`;
+          document.getElementById("shipment-result").style.color = "green";
+        })
+        .catch(error => {
+          console.error("Error:", error);
+          document.getElementById("shipment-result").textContent = "Error creating shipment. Please try again.";
+          document.getElementById("shipment-result").style.color = "red";
+        });
       } else {
         document.getElementById("shipment-result").textContent = "Please fill in all fields.";
         document.getElementById("shipment-result").style.color = "red";
@@ -91,3 +125,5 @@
   </script>
 </body>
 </html>
+
+
