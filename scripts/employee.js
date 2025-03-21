@@ -1,5 +1,6 @@
 // /ShipNGo-frontend/scripts/
 document.addEventListener("DOMContentLoaded", async () => {
+  loadPackages();  
   const token = sessionStorage.getItem("token");
   const role = sessionStorage.getItem("role");
 
@@ -34,6 +35,7 @@ function debounce(func, delay) {
 }
 
 async function loadPackages() {
+
   console.log("Fetching packages...");
 
   const params = new URLSearchParams({

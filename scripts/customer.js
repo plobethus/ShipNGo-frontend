@@ -1,6 +1,7 @@
 // /ShipNGo-frontend/scripts/customer.js
 
 document.addEventListener("DOMContentLoaded", async function () {
+  loadPackages();  
   const token = sessionStorage.getItem("token");
   if (!token) {
     window.location.href = "../../login.html";
