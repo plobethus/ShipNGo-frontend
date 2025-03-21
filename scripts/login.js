@@ -22,7 +22,6 @@ document.getElementById("login-form").addEventListener("submit", async (event) =
       });
       const data = await response.json();
       if (response.ok) {
-        sessionStorage.setItem("token", data.token);
         sessionStorage.setItem("role", data.role);
         sessionStorage.setItem("name", data.name);
         if (data.role === "customer") {
