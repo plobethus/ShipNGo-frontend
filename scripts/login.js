@@ -15,11 +15,13 @@ document.getElementById("login-form").addEventListener("submit", async (event) =
     }
   
     try {
-      const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
-      });
+      const response = await fetch( "https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/auth/login",{
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+          credentials: "include",  // <-- Add this for cross-origin cookie
+        }
+      );
       const data = await response.json();
       if (response.ok) {
         sessionStorage.setItem("role", data.role);
