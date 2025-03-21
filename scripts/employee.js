@@ -99,8 +99,8 @@ async function quickUpdate(packageId, newStatus) {
   try {
     const response = await fetch(`https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/packages/${packageId}`, {
       method: "PUT",
+      credentials: "include",
       headers: {
-        "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ status: newStatus })
