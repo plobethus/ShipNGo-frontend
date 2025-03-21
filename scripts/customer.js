@@ -10,9 +10,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   try {
     const response = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/packages/customer", {
       method: "GET",
+      credentials: "include",
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
+        "Content-Type": "application/json"
       }
     });
     

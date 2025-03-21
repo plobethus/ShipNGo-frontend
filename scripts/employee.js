@@ -50,8 +50,8 @@ async function loadPackages() {
 
   try {
     const response = await fetch(url, {
+      credentials: "include",
       headers: {
-        "Authorization": `Bearer ${sessionStorage.getItem("token")}`,
         "Content-Type": "application/json"
       }
     });
