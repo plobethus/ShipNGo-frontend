@@ -1,3 +1,5 @@
+// /ShipNGo-frontend/scripts/customer_registration.js
+
 document.addEventListener("DOMContentLoaded", function () {
     const registrationForm = document.getElementById("login-form");
   

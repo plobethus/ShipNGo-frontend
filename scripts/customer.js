@@ -1,3 +1,5 @@
+// /ShipNGo-frontend/scripts/customer.js
+
 document.addEventListener("DOMContentLoaded", async function () {
   const token = sessionStorage.getItem("token");
   if (!token) {

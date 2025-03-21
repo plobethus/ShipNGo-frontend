@@ -1,3 +1,5 @@
+// /ShipNGo-frontend/scripts/dashboard.js
+
 document.addEventListener("DOMContentLoaded", async () => {
     const token = sessionStorage.getItem("token");
     const role = sessionStorage.getItem("role");

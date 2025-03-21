@@ -1,3 +1,5 @@
+// /ShipNGo-frontend/scripts/index.js
+
 document.addEventListener("DOMContentLoaded", function () {
     const trackingForm = document.getElementById("tracking-form");
   

@@ -1,3 +1,5 @@
+// /ShipNGo-frontend/scripts/trackingpage.js
+
 document.addEventListener("DOMContentLoaded", async function () {
     const urlParams = new URLSearchParams(window.location.search);
     const trackingNumber = urlParams.get('trackingNumber');

@@ -1,3 +1,5 @@
+// /ShipNGo-frontend/scripts/store.js
+
 let cart = {};
 
 document.addEventListener("DOMContentLoaded", function () {

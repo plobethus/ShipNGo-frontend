@@ -1,3 +1,5 @@
+// /ShipNGo-frontend/scripts/shipment.js
+
 document.getElementById("submitShipment").addEventListener("click", function (event) {
     event.preventDefault(); // Prevent form reload
 
