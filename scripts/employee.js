@@ -1,26 +1,46 @@
 // /ShipNGo-frontend/scripts/
 document.addEventListener("DOMContentLoaded", async () => {
-  const token = sessionStorage.getItem("token");
-  const role = sessionStorage.getItem("role");
-
-  if (!token || role !== "employee") {
-    window.location.href = "../login.html";
-    return;
-  }
-
-  // Event listeners for filter inputs
-  document.getElementById("status-filter")?.addEventListener("change", loadPackages);
-  document.getElementById("search-customer")?.addEventListener("input", debounce(loadPackages, 500));
-  document.getElementById("start-date")?.addEventListener("change", loadPackages);
-  document.getElementById("end-date")?.addEventListener("change", loadPackages);
-  document.getElementById("min-weight")?.addEventListener("input", debounce(loadPackages, 500));
-  document.getElementById("max-weight")?.addEventListener("input", debounce(loadPackages, 500));
-  document.getElementById("address-filter")?.addEventListener("input", debounce(loadPackages, 500));
-
   try {
+    // Check authentication by calling the /auth/me endpoint.
+    const authResponse = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/auth/me", {
+      method: "GET",
+      credentials: "include",  // Ensure cookies are sent
+      headers: { "Content-Type": "application/json" }
+    });
+
+    if (!authResponse.ok) {
+      // Not authenticated—redirect to login
+      window.location.href = "../login.html";
+      return;
+    }
+
+    const authData = await authResponse.json();
+    if (authData.role !== "employee") {
+      // User is not an employee—redirect to login
+      window.location.href = "../login.html";
+      return;
+    }
+
+    // Optionally, update a welcome message (if your HTML includes an element with id "welcome-message")
+    const welcomeDiv = document.getElementById("welcome-message");
+    if (welcomeDiv) {
+      welcomeDiv.innerText = `Welcome, ${authData.name} (Employee)`;
+    }
+
+    // Set up event listeners for filter inputs
+    document.getElementById("status-filter")?.addEventListener("change", loadPackages);
+    document.getElementById("search-customer")?.addEventListener("input", debounce(loadPackages, 500));
+    document.getElementById("start-date")?.addEventListener("change", loadPackages);
+    document.getElementById("end-date")?.addEventListener("change", loadPackages);
+    document.getElementById("min-weight")?.addEventListener("input", debounce(loadPackages, 500));
+    document.getElementById("max-weight")?.addEventListener("input", debounce(loadPackages, 500));
+    document.getElementById("address-filter")?.addEventListener("input", debounce(loadPackages, 500));
+
+    // Load packages after authentication is confirmed
     await loadPackages();
   } catch (error) {
-    console.error("Error loading packages:", error);
+    console.error("Error during authentication:", error);
+    window.location.href = "../login.html";
   }
 });
 
@@ -34,7 +54,6 @@ function debounce(func, delay) {
 }
 
 async function loadPackages() {
-
   console.log("Fetching packages...");
 
   const params = new URLSearchParams({
@@ -51,10 +70,9 @@ async function loadPackages() {
 
   try {
     const response = await fetch(url, {
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      }
+      method: "GET",
+      credentials: "include",  // Ensure cookies are sent with the request
+      headers: { "Content-Type": "application/json" }
     });
 
     if (!response.ok) {
@@ -65,9 +83,13 @@ async function loadPackages() {
 
     const data = await response.json();
     const packageTable = document.getElementById("package-table");
+    if (!packageTable) {
+      console.error("No element with id 'package-table' found.");
+      return;
+    }
     packageTable.innerHTML = "";
 
-    if (data.packages.length === 0) {
+    if (!data.packages || data.packages.length === 0) {
       packageTable.innerHTML = "<tr><td colspan='8'>No packages found.</td></tr>";
       return;
     }
@@ -90,7 +112,6 @@ async function loadPackages() {
       `;
       packageTable.innerHTML += row;
     });
-
   } catch (error) {
     console.error("Error loading packages:", error);
   }
@@ -101,9 +122,7 @@ async function quickUpdate(packageId, newStatus) {
     const response = await fetch(`https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/packages/${packageId}`, {
       method: "PUT",
       credentials: "include",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: newStatus })
     });
 
@@ -116,8 +135,7 @@ async function quickUpdate(packageId, newStatus) {
     }
 
     alert("Package updated successfully!");
-
-    await loadPackages();  // refresh data after update
+    await loadPackages();  // Refresh data after update
   } catch (error) {
     console.error("Error updating package:", error);
     alert("Error updating package. Please try again.");
