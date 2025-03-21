@@ -1,27 +1,25 @@
-// /ShipNGo-frontend/scripts/
+// /ShipNGo-frontend/scripts/employee.js
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // Check authentication by calling the /auth/me endpoint.
+    // Verify authentication via /auth/me
     const authResponse = await fetch("https://shipngo-g9cpbhdvfhgca3cb.northcentralus-01.azurewebsites.net/auth/me", {
       method: "GET",
-      credentials: "include",  // Ensure cookies are sent
+      credentials: "include",
       headers: { "Content-Type": "application/json" }
     });
 
     if (!authResponse.ok) {
-      // Not authenticated—redirect to login
       window.location.href = "../login.html";
       return;
     }
 
     const authData = await authResponse.json();
     if (authData.role !== "employee") {
-      // User is not an employee—redirect to login
       window.location.href = "../login.html";
       return;
     }
 
-    // Optionally, update a welcome message (if your HTML includes an element with id "welcome-message")
+    // Optionally update welcome message if element exists
     const welcomeDiv = document.getElementById("welcome-message");
     if (welcomeDiv) {
       welcomeDiv.innerText = `Welcome, ${authData.name} (Employee)`;
@@ -36,7 +34,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("max-weight")?.addEventListener("input", debounce(loadPackages, 500));
     document.getElementById("address-filter")?.addEventListener("input", debounce(loadPackages, 500));
 
-    // Load packages after authentication is confirmed
+    // Load packages
     await loadPackages();
   } catch (error) {
     console.error("Error during authentication:", error);
@@ -44,7 +42,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// Debounce function to limit API calls while typing
+// Debounce function remains the same
 function debounce(func, delay) {
   let timeout;
   return function () {
@@ -55,7 +53,6 @@ function debounce(func, delay) {
 
 async function loadPackages() {
   console.log("Fetching packages...");
-
   const params = new URLSearchParams({
     status: document.getElementById("status-filter")?.value || "",
     customerName: document.getElementById("search-customer")?.value || "",
@@ -71,7 +68,7 @@ async function loadPackages() {
   try {
     const response = await fetch(url, {
       method: "GET",
-      credentials: "include",  // Ensure cookies are sent with the request
+      credentials: "include",
       headers: { "Content-Type": "application/json" }
     });
 
@@ -125,15 +122,12 @@ async function quickUpdate(packageId, newStatus) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: newStatus })
     });
-
     const data = await response.json();
-
     if (!response.ok) {
       console.error("Error updating package:", data.message);
       alert(`Error updating package: ${data.message}`);
       return;
     }
-
     alert("Package updated successfully!");
     await loadPackages();  // Refresh data after update
   } catch (error) {
