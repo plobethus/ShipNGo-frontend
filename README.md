@@ -1,5 +1,7 @@
-# ShipNGo-frontend
+# ShipNGo-frontend OLD
 This is the html/css and javascript hosted on vercel for the website ShipNGo
+
+This is no longer used, we combned the frontend and backend into a single repository and host the whole thing on Azure, which can be found [here](https://github.com/plobethus/ShipNGo)
 
 ## Created by
 - [Joice](https://github.com/joiceM18)
@@ -9,8 +11,8 @@ This is the html/css and javascript hosted on vercel for the website ShipNGo
 - [Yusuf](https://github.com/GlowSand)
 
 ## Links
-- [ShipNGo](https://ship-n-go-frontend.vercel.app)
-- [back end](https://github.com/plobethus/ShipNGo-backend)
+- [Vercel link](https://ship-n-go-frontend.vercel.app)
+- [frontend and backend repository](https://github.com/plobethus/ShipNGo)
 ## Structure
 ```
 ShipNGo-frontend/
