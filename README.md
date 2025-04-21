@@ -1,6 +1,4 @@
-# Further Update
 
-I (Henry) edited this site to make it into a joke all the stuff below this is irrelevant but if you want to see the real ship-n-go website you can see it [here](https://github.com/plobethus/ShipNGo)
 
 # ShipNGo-frontend OLD
 This is the html/css and javascript hosted on vercel for the website ShipNGo
